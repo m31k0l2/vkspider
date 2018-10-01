@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="vkspider:test" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="vkspider" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="kotlin-language" name="Kotlin">
+      <configuration version="3" platform="JVM 1.8" useProjectSettings="false">
+        <compilerSettings />
+        <compilerArguments>
+          <option name="destination" value="$MODULE_DIR$/../../build/kotlin-classes/test" />
+          <option name="classpath" value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.2.71/5470d1f752cd342edb77e1062bac07e838d2cea4/kotlin-stdlib-jdk8-1.2.71.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/com.vk.api/sdk/0.5.12/6b6b9e2c1c6c6705f02ce99590ee28c7d89ccf18/sdk-0.5.12.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/com.github.jkcclemens/khttp/-SNAPSHOT/6ea00a8d09e6b80a1717081bf04df28fe4331d44/khttp--SNAPSHOT.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/2973d150c0dc1fefe998f834810d68f278ea58ec/junit-4.12.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.2.71/d9717625bb3c731561251f8dd2c67a1011d6764c/kotlin-stdlib-1.2.71.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.2.71/4ce93f539e2133f172f1167291a911f83400a5d0/kotlin-stdlib-jdk7-1.2.71.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.1/2a8e0aa38a2e21cb39e2f5a7d6704cbdc941da0/gson-2.8.1.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.asynchttpclient/async-http-client/2.0.33/b0028a4f0abb232882444f5eca0c36a2ef8c12d2/async-http-client-2.0.33.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-collections4/4.1/a4cf4688fe1c7e3a63aa636cc96d013af537768e/commons-collections4-4.1.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.5/2852e6e05fbb95076fc091f6d1780f1f8fe35e0f/commons-io-2.5.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.3/d1577ae15f01ef5438c5afc62162457c00a34713/httpclient-4.5.3.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.5.3/889fd6d061bb63b99dd5c6aba35a555ae863de52/httpmime-4.5.3.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/da76ca59f6a57ee3102f8f9bd9cee742973efa8a/slf4j-api-1.7.25.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.6/9d28a6b23650e8a7e9063c04588ace6cf7012c17/commons-lang3-3.6.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.json/json/20150729/7ad48f520e9f94787fdbf2beb9916c76971bdcb0/json-20150729.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.jetbrains.spek/spek-api/1.1.0/172b539f343d40c8ba7ebedcbe62c95eabab2ffb/spek-api-1.1.0.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.jetbrains.spek/spek-junit-platform-engine/1.1.0/a07d3fe720183a32adbfb1775f3eec8f2cc9c859/spek-junit-platform-engine-1.1.0.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.asynchttpclient/async-http-client-netty-utils/2.0.33/6b1e8bbd87a229df7d0c2e84383c8c74d53850ed/async-http-client-netty-utils-2.0.33.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-http/4.0.48.Final/233a8fca71976013647f680cdd8b677ac6f0eae4/netty-codec-http-4.0.48.Final.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.0.48.Final/34093023476c959f524ce9627173c7bde5d0b6f6/netty-handler-4.0.48.Final.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-epoll/4.0.48.Final/27eefc1f809e80dd00bd5e50234d26000c7d79a2/netty-transport-native-epoll-4.0.48.Final-linux-x86_64.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.asynchttpclient/netty-resolver-dns/2.0.33/82fa4309085d5b16adac05d717e9f2823aa1d4d8/netty-resolver-dns-2.0.33.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.0/14b8c877d98005ba3941c9257cfe09f6ed0e0d74/reactive-streams-1.0.0.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/com.typesafe.netty/netty-reactive-streams/1.0.8/afe9907657050156b4b204abdcbb16d15c98ad41/netty-reactive-streams-1.0.8.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.6/e3fd8ced1f52c7574af952e2e6da0df8df08eb82/httpcore-4.4.6.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/9ce04e34240f674bc72680f8b843b1457383161a/commons-codec-1.9.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.0.6/3d499d3b7768f88c4796e5a1e357933e11a8936d/kotlin-reflect-1.0.6.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.0.48.Final/3fd2bd39bf99edef558f1beaece7cc4d6a13aa11/netty-buffer-4.0.48.Final.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.0.48.Final/16fb772e1f796bcef6e45adebe65d03a00826e2/netty-codec-4.0.48.Final.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.0.48.Final/9bf7b24530a2d49392ca581d54d3bc94a30b3cf8/netty-transport-4.0.48.Final.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.0.48.Final/44add9f639bdbc4660e55e0df161ada21927113b/netty-common-4.0.48.Final.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.asynchttpclient/netty-resolver/2.0.33/a3b8dc7528d63f5a79ea05c8a263d66125f71d8b/netty-resolver-2.0.33.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.asynchttpclient/netty-codec-dns/2.0.33/4b3e48685bf192c73aa11fa8deeea5e7207bdbef/netty-codec-dns-2.0.33.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.2.71/ba18ca1aa0e40eb6f1865b324af2f4cbb691c1ec/kotlin-stdlib-common-1.2.71.jar:/home/melkor/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar" />
+          <option name="noStdlib" value="true" />
+          <option name="noReflect" value="true" />
+          <option name="moduleName" value="vkspider" />
+          <option name="jvmTarget" value="1.8" />
+          <option name="addCompilerBuiltIns" value="true" />
+          <option name="loadBuiltInsFromDependencies" value="true" />
+          <option name="friendPaths">
+            <array>
+              <option value="$MODULE_DIR$/../../build/classes/main" />
+              <option value="$MODULE_DIR$/../../build/kotlin-classes/main" />
+            </array>
+          </option>
+          <option name="languageVersion" value="1.2" />
+          <option name="apiVersion" value="1.2" />
+          <option name="pluginOptions">
+            <array />
+          </option>
+          <option name="pluginClasspaths">
+            <array />
+          </option>
+        </compilerArguments>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output-test url="file://$MODULE_DIR$/../../out/test/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../src/test">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../src/test/kotlin" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../src/test/resources" type="java-test-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="vkspider_main" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.71" level="project" />
+    <orderEntry type="library" name="Gradle: com.vk.api:sdk:0.5.12" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.jkcclemens:khttp:-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.2.71" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.71" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.8.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.asynchttpclient:async-http-client:2.0.33" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.commons:commons-collections4:4.1" level="project" />
+    <orderEntry type="library" name="Gradle: commons-io:commons-io:2.5" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpclient:4.5.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpmime:4.5.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:3.6" level="project" />
+    <orderEntry type="library" name="Gradle: org.json:json:20150729" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.spek:spek-api:1.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.spek:spek-junit-platform-engine:1.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.asynchttpclient:async-http-client-netty-utils:2.0.33" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec-http:4.0.48.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-handler:4.0.48.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport-native-epoll:linux-x86_64:4.0.48.Final" level="project" />
+    <orderEntry type="library" name="Gradle: org.asynchttpclient:netty-resolver-dns:2.0.33" level="project" />
+    <orderEntry type="library" name="Gradle: org.reactivestreams:reactive-streams:1.0.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.typesafe.netty:netty-reactive-streams:1.0.8" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpcore:4.4.6" level="project" />
+    <orderEntry type="library" name="Gradle: commons-logging:commons-logging:1.2" level="project" />
+    <orderEntry type="library" name="Gradle: commons-codec:commons-codec:1.9" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-reflect:1.0.6" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-buffer:4.0.48.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec:4.0.48.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport:4.0.48.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-common:4.0.48.Final" level="project" />
+    <orderEntry type="library" name="Gradle: org.asynchttpclient:netty-resolver:2.0.33" level="project" />
+    <orderEntry type="library" name="Gradle: org.asynchttpclient:netty-codec-dns:2.0.33" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.2.71" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains:annotations:13.0" level="project" />
+  </component>
+  <component name="TestModuleProperties" production-module="vkspider_main" />
+</module>
