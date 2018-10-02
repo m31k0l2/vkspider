@@ -15,10 +15,10 @@ import java.net.URL
 
 
 @Suppress("PrivatePropertyName")
-class VKSpider {
-    val APP_ID = 6701750
-    private val CLIENT_SECRET = "MHSYr1vEpIGdHnbym1jx"
-    val REDIRECT_URI = "http://example.com/callback"
+class VKSpider(val email: String, val pass: String) {
+    val APP_ID = 6708705
+    private val CLIENT_SECRET = "TqkWrY3M3fqXMSMsjXrH"
+    val REDIRECT_URI = "https://oauth.vk.com/blank.html"
     private val vk = init()
 //    private val code = appAuthorization()
 //    val actor = userAuthorization(code)
@@ -28,9 +28,7 @@ class VKSpider {
         return VkApiClient(transportClient)
     }
 
-    private fun appAuthorization(): String {
-        TODO()
-    }
+    private fun appAuthorization() = getCode()
 
     private fun userAuthorization(code: String): UserActor {
         val authResponse = vk.oauth()
@@ -82,14 +80,10 @@ class VKSpider {
     }
 
     fun getLoginData(html: String, email: String, pass: String): Map<String, String> {
-//        val tag = parseTag(html, "form")
-//        val action = parseParam(tag, "action")!!
         val form = parseBlock(html.replace("\n", ""), "form")
         val inputs = parseInputs(form)
         val data = mutableMapOf<String, String>()
         val d = extractPostData(inputs.filter { it.contains("hidden") })
-        data["act"] = "login"
-        data["soft"] = "1"
         data["ip_h"] = d["ip_h"]!!
         data["lg_h"] = d["lg_h"]!!
         data["_origin"] = d["_origin"]!!
@@ -98,6 +92,19 @@ class VKSpider {
         data["email"] = email
         data["pass"] = pass
         return data
+    }
+
+    fun getCode(): String {
+        val url = "https://oauth.vk.com/authorize?client_id=$APP_ID&redirect_uri=$REDIRECT_URI&display=page&scope=friends&response_type=code&v=5.85"
+        var response = get(url)
+        val data = getLoginData(response.text, email, pass)
+        var cookies = response.cookies.toMap()
+        response = post("https://login.vk.com?act=login&soft=1", cookies = cookies, data = data)
+        cookies = response.cookies.toMap()
+        val tag = parseTag(response.text, "form")
+        val action = parseParam(tag, "action")!!
+        response = get(action, cookies=cookies)
+        return response.url.split("#code=").last()
     }
 }
 
@@ -110,60 +117,7 @@ fun readFromFile(fname: String): String {
     return html
 }
 
-@Throws(UnsupportedEncodingException::class)
-fun splitQuery(url: URL): Map<String, String> {
-    val query_pairs = LinkedHashMap<String, String>()
-    val query = url.getQuery()
-    val pairs = query.split("&".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-    for (pair in pairs) {
-        val idx = pair.indexOf("=")
-        query_pairs[URLDecoder.decode(pair.substring(0, idx), "UTF-8")] = URLDecoder.decode(pair.substring(idx + 1), "UTF-8")
-    }
-    return query_pairs
-}
-
 fun main(args: Array<String>) {
-    val spider = VKSpider()
-//    val html = VKSpider().sendGet("https://oauth.vk.com/authorize?client_id=${spider.APP_ID}&display=page&scope=friends&response_type=code&v=5.85")
-////    val html = readFromFile("login.html")
-//    val data = spider.getLoginData(html, "89266552375", "m31k0l2")
-//    data.second.forEach { a, b -> println("$a -> $b") }
-//    spider.sendPost("https://login.vk.com", data.second)
-    val url = "https://oauth.vk.com/authorize?client_id=${spider.APP_ID}&display=page&scope=friends&response_type=code&v=5.85"
-    var response = get(url)
-    val data = spider.getLoginData(response.text, "89266552375", "m31k0l2")
-    response = post("https://login.vk.com", cookies = response.cookies.toMap(), data = data, allowRedirects = false)
-    val remixq = response.cookies.filter { it.key.contains("remixq_") }.keys.first()
-    val q_hash = remixq.substring("remixq_".length)
-    response = get("https://vk.com/login.php?act=slogin&to=&s=1&__q_hash=$q_hash", cookies = response.cookies.toMap())
-    val sid = response.cookies.get("remixsid")!!
-    val cookies = mapOf("remixsid" to sid)
-//    response = get("https://vk.com/id508731237", cookies = cookies)
-//    val cookies2 = response.cookies.toMap()
-    response = get(url, cookies=cookies)
-    val html = response.text
-    val tag = spider.parseTag(html, "form")
-    val action = spider.parseParam(tag, "action")!!
-    val params = splitQuery(URL(action))
-    println(action)
-    response = get(action, headers=mapOf(
-            "Accept" to "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            "Accept-Encoding" to "gzip, deflate, br",
-            "Accept-Language" to "ru,en-US;q=0.7,en;q=0.3",
-            "Cache-Control" to "max-age=0",
-            "Connection" to "keep-alive",
-            "Host" to "oauth.vk.com",
-            "User-Agent" to "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0"
-            ))
-//    https://login.vk.com/?act=grant_access&client_id=6701750&settings=2&redirect_uri=&response_type=code&group_ids=&token_type=0&v=5.85&state=&display=page&ip_h=fa6c17450948392836&hash=1538339457_d487e734d965242413&https=1
-    println(response.text)
-
-//    val f = File("test.html")
-//    val fw = FileWriter(f)
-//    fw.write(response.text)
-//    fw.close()
-    //https://vk.com/login.php?act=slogin&to=&s=1&__q_hash=9d736f5556ea7378f6963eba95d08b3e
-//    val r = post("https://login.vk.com", data = data)
-//    println(r.statusCode)
+    val spider = VKSpider("89266552375", "m31k0l2")
+    println(spider.getCode())
 }
-//https://oauth.vk.com/authorize?client_id=6701750&display=page&scope=friends&response_type=code&v=5.85
