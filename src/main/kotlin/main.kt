@@ -132,8 +132,8 @@ fun readFromFile(fname: String): String {
 }
 
 fun main(args: Array<String>) {
-//    val spider = VKSpider("89266552375", "m31k0l2")
-    val spider = VKSpider("89166562389", "Love1987")
+//    val spider = VKSpider("XXXXXXXXXXXXXXXXXXXXXXXXXX", "XXXXXXXXXXXXXXXXXXXXXXXXXX")
+    val spider = VKSpider("XXXXXXXXXXXXXXXXXXXXXXXXXX", "XXXXXXXXXXXXXXXXXXXXXXXXXX")
     spider.readToken()
 //    spider.accessToken = "9caf91c20a0481e0dba3747169d01da13837b54bbb2a7d4afad60a40625dffd723ff95ae35a4d993a7d38"
 //    spider.userId = 508731237
